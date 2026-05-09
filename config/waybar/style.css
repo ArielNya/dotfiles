@@ -1,0 +1,231 @@
+/* ═══════════════════════════════════════════════════════════════
+   🔥 Meru Cozy — Waybar Stylesheet
+   Glassmorphic dark bar with warm amber accents
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Global ──────────────────────────────────────────────────── */
+* {
+    font-family: "JetBrainsMono Nerd Font", "SF Mono Ligaturized", monospace;
+    font-size: 13px;
+    font-weight: 500;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background: rgba(26, 14, 16, 0.82);
+    border-radius: 12px;
+    border: 1px solid rgba(197, 109, 58, 0.15);
+    color: #e8dcd0;
+}
+
+window#waybar.hidden {
+    opacity: 0.1;
+}
+
+tooltip {
+    background: rgba(43, 21, 24, 0.95);
+    border: 1px solid rgba(197, 109, 58, 0.3);
+    border-radius: 10px;
+    color: #e8dcd0;
+    padding: 8px 12px;
+}
+
+tooltip label {
+    color: #e8dcd0;
+}
+
+/* ── Module Base ─────────────────────────────────────────────── */
+#workspaces,
+#window,
+#clock,
+#tray,
+#pulseaudio,
+#network,
+#battery,
+#custom-separator,
+#custom-power {
+    padding: 0 10px;
+    margin: 4px 2px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* ── Workspaces ──────────────────────────────────────────────── */
+#workspaces {
+    background: rgba(43, 21, 24, 0.6);
+    border-radius: 10px;
+    padding: 0 4px;
+    margin-left: 4px;
+}
+
+#workspaces button {
+    color: #a89080;
+    padding: 2px 8px;
+    margin: 3px 2px;
+    border-radius: 7px;
+    background: transparent;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    min-width: 20px;
+}
+
+#workspaces button:hover {
+    background: rgba(197, 109, 58, 0.2);
+    color: #e8a04a;
+    box-shadow: 0 0 8px rgba(197, 109, 58, 0.15);
+}
+
+#workspaces button.active {
+    background: linear-gradient(135deg, rgba(197, 109, 58, 0.5), rgba(132, 55, 39, 0.5));
+    color: #e8dcd0;
+    box-shadow: 0 0 12px rgba(197, 109, 58, 0.25);
+}
+
+#workspaces button.urgent {
+    background: rgba(197, 58, 58, 0.5);
+    color: #e8dcd0;
+    animation-name: pulse-urgent;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes pulse-urgent {
+    from {
+        background-color: rgba(197, 58, 58, 0.3);
+    }
+    to {
+        background-color: rgba(197, 58, 58, 0.7);
+    }
+}
+
+/* ── Window Title ────────────────────────────────────────────── */
+#window {
+    color: #a89080;
+    font-size: 12px;
+    font-style: italic;
+    padding: 0 12px;
+}
+
+/* ── Clock ───────────────────────────────────────────────────── */
+#clock {
+    color: #e8a04a;
+    font-weight: 700;
+    font-size: 13px;
+    background: rgba(43, 21, 24, 0.5);
+    border-radius: 10px;
+    padding: 0 16px;
+    text-shadow: 0 0 8px rgba(232, 160, 74, 0.2);
+}
+
+#clock:hover {
+    background: rgba(197, 109, 58, 0.15);
+    box-shadow: 0 0 10px rgba(197, 109, 58, 0.1);
+}
+
+/* ── Tray ────────────────────────────────────────────────────── */
+#tray {
+    padding: 0 8px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+/* ── Pulseaudio ──────────────────────────────────────────────── */
+#pulseaudio {
+    color: #c56d3a;
+}
+
+#pulseaudio:hover {
+    background: rgba(197, 109, 58, 0.12);
+    color: #e8a04a;
+}
+
+#pulseaudio.muted {
+    color: #5a3a30;
+}
+
+/* ── Network ─────────────────────────────────────────────────── */
+#network {
+    color: #0b596c;
+}
+
+#network:hover {
+    background: rgba(11, 89, 108, 0.15);
+    color: #3c608b;
+}
+
+#network.disconnected {
+    color: #5a3a30;
+}
+
+/* ── Battery ─────────────────────────────────────────────────── */
+#battery {
+    color: #c56d3a;
+}
+
+#battery:hover {
+    background: rgba(197, 109, 58, 0.12);
+}
+
+#battery.charging,
+#battery.plugged {
+    color: #0b596c;
+}
+
+#battery.warning:not(.charging) {
+    color: #d4a832;
+    animation-name: pulse-battery;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#battery.critical:not(.charging) {
+    color: #c53a3a;
+    animation-name: pulse-battery;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes pulse-battery {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.5;
+    }
+}
+
+/* ── Separator ───────────────────────────────────────────────── */
+#custom-separator {
+    color: rgba(197, 109, 58, 0.3);
+    font-size: 8px;
+    padding: 0 4px;
+}
+
+/* ── Power Button ────────────────────────────────────────────── */
+#custom-power {
+    color: #843727;
+    font-size: 14px;
+    padding: 0 10px;
+    margin-right: 4px;
+    border-radius: 10px;
+}
+
+#custom-power:hover {
+    background: rgba(132, 55, 39, 0.3);
+    color: #c53a3a;
+    box-shadow: 0 0 10px rgba(197, 58, 58, 0.15);
+}

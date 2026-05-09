@@ -1,0 +1,105 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "file",
+    "source": "~/.config/fastfetch/tattoo.txt",
+    "color": {
+      "1": "38;2;197;109;58",
+      "2": "38;2;11;89;108"
+    }
+  },
+  "display": {
+    "separator": " 󰁕 ",
+    "color": "38;2;197;109;58"
+  },
+  "modules": [
+    {
+      "type": "title",
+      "format": "{user-name}@{host-name}",
+      "key": " ",
+      "keyColor": "38;2;232;160;74"
+    },
+    {
+      "type": "separator",
+      "string": "━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    },
+    {
+      "type": "os",
+      "key": "  os",
+      "keyColor": "38;2;197;109;58"
+    },
+    {
+      "type": "kernel",
+      "key": "  ker",
+      "keyColor": "38;2;132;55;39"
+    },
+    {
+      "type": "uptime",
+      "key": " 󰅐 up",
+      "keyColor": "38;2;212;168;50"
+    },
+    {
+      "type": "packages",
+      "key": " 󰏖 pkg",
+      "keyColor": "38;2;11;89;108"
+    },
+    {
+      "type": "shell",
+      "key": "  sh",
+      "keyColor": "38;2;60;96;139"
+    },
+    {
+      "type": "wm",
+      "key": "  wm",
+      "keyColor": "38;2;197;109;58"
+    },
+    {
+      "type": "terminal",
+      "key": "  trm",
+      "keyColor": "38;2;139;46;46"
+    },
+    {
+      "type": "terminalfont",
+      "key": "  fnt",
+      "keyColor": "38;2;124;148;188"
+    },
+    {
+      "type": "separator",
+      "string": "━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    },
+    {
+      "type": "cpu",
+      "key": " 󰍛 cpu",
+      "keyColor": "38;2;197;109;58"
+    },
+    {
+      "type": "gpu",
+      "key": " 󰢮 gpu",
+      "keyColor": "38;2;132;55;39"
+    },
+    {
+      "type": "memory",
+      "key": "  mem",
+      "keyColor": "38;2;11;89;108"
+    },
+    {
+      "type": "disk",
+      "key": " 󰋊 dsk",
+      "keyColor": "38;2;60;96;139"
+    },
+    {
+      "type": "battery",
+      "key": " 󰁹 bat",
+      "keyColor": "38;2;212;168;50"
+    },
+    {
+      "type": "separator",
+      "string": "━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    },
+    {
+      "type": "colors",
+      "paddingLeft": 3,
+      "symbol": "circle"
+    }
+  ]
+}

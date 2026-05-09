@@ -1,0 +1,59 @@
+# ═══════════════════════════════════════════════════════════════
+#  🔥 Meru Cozy — Starship Prompt
+#  Warm amber and crimson prompt with cozy vibes
+# ═══════════════════════════════════════════════════════════════
+
+add_newline = false
+format = """
+[╭─](bold #843727)$directory$git_branch$git_status$python$rust$nodejs
+[╰─](bold #843727)$character"""
+
+[directory]
+style = "bold #0b596c"
+format = "[$path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+"Projects" = " "
+".config" = " "
+
+[git_branch]
+symbol = " "
+style = "bold #c56d3a"
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style = "bold #e8a04a"
+format = '([$all_status$ahead_behind]($style) )'
+ahead = "⇡${count} "
+behind = "⇣${count} "
+diverged = "⇕⇡${ahead_count}⇣${behind_count} "
+modified = "!${count} "
+staged = "+${count} "
+untracked = "?${count} "
+deleted = "✘${count} "
+renamed = "»${count} "
+
+[python]
+symbol = " "
+style = "bold #3c608b"
+format = '[$symbol$pyenv_prefix$version]($style) '
+
+[rust]
+symbol = " "
+style = "bold #c56d3a"
+format = '[$symbol$version]($style) '
+
+[nodejs]
+symbol = "󰎙 "
+style = "bold #0b596c"
+format = '[$symbol$version]($style) '
+
+[character]
+success_symbol = "[❯](bold #c56d3a)"
+error_symbol = "[✗](bold #c53a3a)"

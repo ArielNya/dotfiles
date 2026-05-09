@@ -1,0 +1,659 @@
+/**
+ * @name Meru Cozy
+ * @author Alice
+ * @version 1.0.0
+ * @description Warm wine, amber, teal, and soft cream theme for Vencord/Vesktop.
+ */
+
+:root {
+    --meru-bg-dark: #1a0e10;
+    --meru-bg: #2b1518;
+    --meru-bg-light: #3d1e22;
+    --meru-surface: #4a2428;
+    --meru-surface-soft: rgba(74, 36, 40, 0.64);
+    --meru-amber: #c56d3a;
+    --meru-amber-glow: #e8a04a;
+    --meru-red: #843727;
+    --meru-red-bright: #c53a3a;
+    --meru-teal: #0b596c;
+    --meru-blue: #3c608b;
+    --meru-text: #e8dcd0;
+    --meru-text-dim: #a89080;
+    --meru-gold: #d4a832;
+    --meru-shadow: rgba(10, 4, 5, 0.56);
+
+    --font-primary: "JetBrainsMono Nerd Font", "JetBrains Mono", "gg sans", sans-serif;
+    --font-display: "JetBrainsMono Nerd Font", "JetBrains Mono", "gg sans", sans-serif;
+    --font-code: "JetBrainsMono Nerd Font", "JetBrains Mono", "Cascadia Code", monospace;
+
+    --background-primary: var(--meru-bg-dark);
+    --background-secondary: var(--meru-bg);
+    --background-secondary-alt: #241215;
+    --background-tertiary: #130a0c;
+    --background-accent: var(--meru-surface);
+    --background-floating: rgba(26, 14, 16, 0.96);
+    --background-nested-floating: rgba(43, 21, 24, 0.96);
+    --background-modifier-hover: rgba(197, 109, 58, 0.12);
+    --background-modifier-active: rgba(197, 109, 58, 0.18);
+    --background-modifier-selected: rgba(197, 109, 58, 0.24);
+    --background-modifier-accent: rgba(197, 109, 58, 0.18);
+
+    --text-normal: var(--meru-text);
+    --text-muted: var(--meru-text-dim);
+    --text-link: var(--meru-amber-glow);
+    --text-positive: #7c94bc;
+    --text-warning: var(--meru-gold);
+    --text-danger: var(--meru-red-bright);
+    --interactive-normal: var(--meru-text-dim);
+    --interactive-hover: var(--meru-text);
+    --interactive-active: var(--meru-amber-glow);
+    --interactive-muted: #5a3a30;
+
+    --brand-500: var(--meru-amber);
+    --brand-560: #a85631;
+    --brand-600: #843727;
+    --brand-experiment: var(--meru-amber);
+    --status-positive: var(--meru-teal);
+    --status-warning: var(--meru-gold);
+    --status-danger: var(--meru-red-bright);
+
+    --input-background: rgba(43, 21, 24, 0.88);
+    --channeltextarea-background: rgba(43, 21, 24, 0.82);
+    --modal-background: var(--meru-bg);
+    --modal-footer-background: #241215;
+    --scrollbar-thin-thumb: rgba(197, 109, 58, 0.45);
+    --scrollbar-thin-track: transparent;
+    --scrollbar-auto-thumb: rgba(197, 109, 58, 0.45);
+    --scrollbar-auto-track: rgba(43, 21, 24, 0.4);
+    --focus-primary: var(--meru-amber-glow);
+
+    --app-background-frame: #130a0c;
+    --app-background: var(--meru-bg-dark);
+    --bg-base-primary: var(--meru-bg-dark);
+    --bg-base-secondary: var(--meru-bg);
+    --bg-base-tertiary: #130a0c;
+    --bg-surface-overlay: rgba(26, 14, 16, 0.94);
+    --bg-surface-raised: rgba(43, 21, 24, 0.96);
+    --bg-surface-card: rgba(43, 21, 24, 0.66);
+    --background-base-lowest: #130a0c;
+    --background-base-lower: var(--meru-bg-dark);
+    --background-base-low: var(--meru-bg);
+    --background-surface-high: var(--meru-bg-light);
+    --background-surface-higher: var(--meru-surface);
+    --background-surface-highest: #5a3a30;
+    --background-code: rgba(19, 10, 12, 0.8);
+    --background-message-hover: rgba(197, 109, 58, 0.08);
+    --background-mentioned: rgba(232, 160, 74, 0.14);
+    --background-mentioned-hover: rgba(232, 160, 74, 0.2);
+    --border-subtle: rgba(197, 109, 58, 0.14);
+    --border-faint: rgba(197, 109, 58, 0.08);
+    --border-strong: rgba(197, 109, 58, 0.28);
+    --custom-channel-members-bg: rgba(26, 14, 16, 0.52);
+    --custom-guild-sidebar-width: 72px;
+    --custom-app-top-bar-height: 32px;
+    --chat-background-default: var(--meru-bg-dark);
+    --chat-border: rgba(197, 109, 58, 0.14);
+}
+
+body,
+.theme-dark,
+.theme-light {
+    background: var(--meru-bg-dark);
+    color: var(--meru-text);
+}
+
+#app-mount,
+#app-mount .app,
+#app-mount [class*="app_"],
+#app-mount [class*="bg_"],
+#app-mount [class*="layer_"],
+#app-mount [class*="layers_"] {
+    background: radial-gradient(circle at top left, rgba(197, 109, 58, 0.1), transparent 36%),
+        linear-gradient(180deg, #1a0e10 0%, #130a0c 100%) !important;
+    color: var(--meru-text) !important;
+}
+
+::selection {
+    background: rgba(197, 109, 58, 0.55);
+    color: var(--meru-bg-dark);
+}
+
+/* ── App Shell ─────────────────────────────────────────────── */
+.appMount_ea7e65,
+.app_de4237,
+.bg_d4b6c5,
+.layers_a01fb1,
+.layer_d4b6c5,
+.standardSidebarView_c25c6d {
+    background: radial-gradient(circle at top left, rgba(197, 109, 58, 0.09), transparent 34%),
+        linear-gradient(180deg, #1a0e10 0%, #130a0c 100%) !important;
+}
+
+#app-mount [class*="base_"],
+#app-mount [class*="content_"],
+#app-mount [class*="chat_"],
+#app-mount [class*="chatContent_"],
+#app-mount [class*="messagesWrapper_"],
+#app-mount [class*="scrollerInner_"],
+#app-mount [class*="channelTextArea_"],
+#app-mount [class*="container_"][role="tabpanel"],
+#app-mount main[class*="chatContent_"] {
+    background-color: transparent !important;
+}
+
+#app-mount [class*="chat_"],
+#app-mount [class*="chatContent_"],
+#app-mount [class*="messagesWrapper_"],
+#app-mount [class*="scrollerContent_"],
+#app-mount [class*="scrollerInner_"],
+#app-mount [data-list-id="chat-messages"] {
+    background: rgba(26, 14, 16, 0.5) !important;
+}
+
+#app-mount [class*="sidebar_"],
+#app-mount [class*="guilds_"],
+#app-mount [class*="membersWrap_"],
+#app-mount [class*="members_"],
+#app-mount [class*="privateChannels_"],
+#app-mount [class*="panels_"],
+#app-mount [class*="container_"][aria-label*="Servers"],
+#app-mount nav[aria-label*="Servers"],
+#app-mount aside[class*="membersWrap_"] {
+    background: rgba(26, 14, 16, 0.68) !important;
+    border-color: rgba(197, 109, 58, 0.14) !important;
+}
+
+#app-mount [class*="title_"],
+#app-mount [class*="subtitleContainer_"],
+#app-mount [class*="toolbar_"],
+#app-mount [class*="header_"],
+#app-mount section[class*="container_"] {
+    background: rgba(26, 14, 16, 0.78) !important;
+    border-color: rgba(197, 109, 58, 0.14) !important;
+    box-shadow: 0 1px 0 rgba(197, 109, 58, 0.12);
+}
+
+#app-mount [class*="chatContent_"] {
+    border-left: 1px solid rgba(197, 109, 58, 0.08);
+    border-right: 1px solid rgba(197, 109, 58, 0.08);
+}
+
+#app-mount [class*="sidebar_"],
+#app-mount [class*="membersWrap_"],
+#app-mount [class*="nowPlayingColumn_"],
+#app-mount [class*="peopleColumn_"],
+#app-mount [class*="chat_"],
+#app-mount [class*="chatContent_"] {
+    border-radius: 0 !important;
+}
+
+#app-mount [class*="panels_"],
+#app-mount [class*="searchBar_"],
+#app-mount [class*="searchBarComponent_"],
+#app-mount [class*="channelTextArea_"],
+#app-mount [class*="scrollableContainer_"],
+#app-mount [class*="member_"] [class*="layout_"],
+#app-mount [class*="link_"],
+#app-mount [class*="interactive_"],
+#app-mount [class*="itemCard_"],
+#app-mount [class*="peopleListItem_"],
+#app-mount [class*="message_"] {
+    border-radius: 10px !important;
+}
+
+#app-mount [class*="channelTextArea_"],
+#app-mount [class*="scrollableContainer_"] {
+    background: rgba(43, 21, 24, 0.86) !important;
+    border: 1px solid rgba(197, 109, 58, 0.18) !important;
+    box-shadow: 0 10px 32px rgba(10, 4, 5, 0.24) !important;
+}
+
+#app-mount [class*="message_"]:hover,
+#app-mount [class*="message_"][class*="selected_"],
+#app-mount [class*="message_"][class*="replying_"] {
+    background: rgba(197, 109, 58, 0.08) !important;
+}
+
+#app-mount [class*="link_"]:hover,
+#app-mount [class*="interactive_"]:hover,
+#app-mount [class*="member_"]:hover [class*="layout_"],
+#app-mount [class*="peopleListItem_"]:hover,
+#app-mount [class*="itemCard_"]:hover {
+    background: rgba(197, 109, 58, 0.12) !important;
+}
+
+#app-mount [class*="modeSelected_"] [class*="link_"],
+#app-mount [class*="selected_"][class*="interactive_"],
+#app-mount [class*="selected_"] [class*="layout_"],
+#app-mount [class*="itemCard_"][class*="active_"] {
+    background: linear-gradient(135deg, rgba(197, 109, 58, 0.3), rgba(132, 55, 39, 0.22)) !important;
+    color: var(--meru-amber-glow) !important;
+    box-shadow: inset 3px 0 0 var(--meru-amber) !important;
+}
+
+#app-mount [class*="menu_"],
+#app-mount [class*="root_"][role="dialog"],
+#app-mount [class*="popout_"],
+#app-mount [class*="tooltip_"],
+#app-mount [class*="userPopout"],
+#app-mount [class*="messagesPopoutWrap_"] {
+    background: rgba(26, 14, 16, 0.96) !important;
+    border: 1px solid rgba(197, 109, 58, 0.18) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 18px 50px rgba(10, 4, 5, 0.5) !important;
+}
+
+#app-mount [class*="themed_"],
+#app-mount [class*="children_"]::after,
+#app-mount [class*="form_"]::before {
+    background: transparent !important;
+}
+
+.sidebar_a4d4d9,
+.sidebarRegionScroller_c25c6d,
+.guilds_a4d4d9,
+.privateChannels_f0963d,
+.container_ee69e0,
+.members_cbd271,
+.membersWrap_cbd271,
+.chatContent_a7d72e,
+.container_d1c246,
+.nowPlayingColumn_c2739c,
+.container_bf550a,
+.container_c2739c,
+.applicationStore_cecc86,
+.shopScroll_e77fa3 {
+    background: transparent !important;
+}
+
+.sidebar_a4d4d9,
+.membersWrap_cbd271,
+.nowPlayingColumn_c2739c {
+    background: rgba(26, 14, 16, 0.68) !important;
+    border-color: rgba(197, 109, 58, 0.12) !important;
+}
+
+.container_ee69e0,
+.privateChannels_f0963d,
+.panels_a4d4d9,
+.peopleColumn_c2739c,
+.chat_a7d72e {
+    background: rgba(26, 14, 16, 0.48) !important;
+}
+
+.title_a7d72e,
+.header_fd6364,
+.searchBar_f0963d,
+.container_fc4f04,
+.themed_fc4f04 {
+    background: rgba(26, 14, 16, 0.72) !important;
+    border-color: rgba(197, 109, 58, 0.14) !important;
+    box-shadow: 0 1px 0 rgba(197, 109, 58, 0.12), 0 12px 32px var(--meru-shadow);
+}
+
+.panels_a4d4d9 {
+    border: 1px solid rgba(197, 109, 58, 0.14);
+    border-radius: 12px;
+    margin: 0 8px 8px;
+}
+
+/* ── Servers, Channels, Lists ──────────────────────────────── */
+.wrapper_d8bfb3:hover .link_d8bfb3,
+.interactive_f5eb4b:hover,
+.channel_c91bad:hover,
+.clickable_d808b0:hover,
+.member_cbd271:hover .layout_cbd271,
+.peopleListItem_d51464:hover,
+.itemCard_f02fcf:hover {
+    background: rgba(197, 109, 58, 0.12) !important;
+    color: var(--meru-text) !important;
+}
+
+.modeSelected_d8bfb3 .link_d8bfb3,
+.selected_f5eb4b,
+.selected_d808b0,
+.member_cbd271.selected_cbd271 .layout_cbd271,
+.peopleListItem_d51464.active_d51464,
+.itemCard_f02fcf.active_f02fcf {
+    background: linear-gradient(135deg, rgba(197, 109, 58, 0.3), rgba(132, 55, 39, 0.22)) !important;
+    color: var(--meru-amber-glow) !important;
+    box-shadow: inset 3px 0 0 var(--meru-amber);
+}
+
+.unread_d8bfb3,
+.item_fd07a3 {
+    background-color: var(--meru-amber-glow) !important;
+}
+
+.numberBadge_df8943,
+.newMessagesBar_cf58b5,
+.barBase_cf58b5 {
+    background: linear-gradient(135deg, var(--meru-red), var(--meru-red-bright)) !important;
+    color: var(--meru-text) !important;
+}
+
+.wrapper_bc7085,
+.circleIconButton_db6521 {
+    color: var(--meru-amber) !important;
+    background: rgba(43, 21, 24, 0.72) !important;
+}
+
+.wrapper_bc7085.selected_ae80f7 .childWrapper_a6ce15,
+.circleIconButton_db6521.selected_db6521,
+.childWrapper_a6ce15:hover,
+.circleIconButton_db6521:hover {
+    background: var(--meru-amber) !important;
+    color: var(--meru-bg-dark) !important;
+}
+
+/* ── Messages ──────────────────────────────────────────────── */
+.messageListItem_d5deea:hover .message_d5deea,
+.message_d5deea.selected_d5deea,
+.message_d5deea.replying_d5deea {
+    background: rgba(197, 109, 58, 0.08) !important;
+}
+
+.mentioned_d5deea {
+    background: linear-gradient(90deg, rgba(232, 160, 74, 0.18), rgba(232, 160, 74, 0.04)) !important;
+}
+
+.mentioned_d5deea::before {
+    background: var(--meru-amber-glow) !important;
+}
+
+.repliedMessage_f9f2ca::before {
+    border-color: rgba(197, 109, 58, 0.45) !important;
+}
+
+.markup_f8f345 code,
+.inlineCode_f8f345,
+.codeBlockText_cdb578,
+.codeLine_cdb578,
+.codeView_cdb578 {
+    background: rgba(19, 10, 12, 0.78) !important;
+    border-color: rgba(197, 109, 58, 0.18) !important;
+    color: var(--meru-text) !important;
+}
+
+.embedFull_b0068a {
+    background: rgba(43, 21, 24, 0.58) !important;
+    border-color: var(--meru-amber) !important;
+}
+
+.blockquoteDivider_f8f345 {
+    background: var(--meru-blue) !important;
+}
+
+/* ── Composer, Inputs, Buttons ─────────────────────────────── */
+.form_a7d72e::before {
+    display: none;
+}
+
+.channelTextArea_a7d72e,
+.channelTextArea_d0696b,
+.scrollableContainer_d0696b,
+.searchBar_a46bef,
+.searchBarComponent_f0963d,
+.input_f8bc55,
+.inputDefault_f8bc55,
+.inputWrapper_f8bc55 input,
+.copyInput_fffc15 {
+    background: rgba(43, 21, 24, 0.82) !important;
+    border: 1px solid rgba(197, 109, 58, 0.16) !important;
+    color: var(--meru-text) !important;
+}
+
+.channelTextArea_a7d72e,
+.scrollableContainer_d0696b {
+    border-radius: 14px !important;
+    box-shadow: 0 10px 32px rgba(10, 4, 5, 0.22);
+}
+
+.placeholder_a552a6,
+.placeholder_e68c63,
+.subtitleContainer_a7d72e,
+.topic_bf3bbb,
+.mutedChannelsHook_b45b4b {
+    color: var(--meru-text-dim) !important;
+}
+
+.button_dd4f85,
+.button_afdfd9,
+.lookFilled_dd4f85,
+.lookFilled_afdfd9 {
+    background: linear-gradient(135deg, var(--meru-amber), var(--meru-red)) !important;
+    color: var(--meru-bg-dark) !important;
+    border: 0 !important;
+}
+
+.button_dd4f85:hover,
+.button_afdfd9:hover,
+.lookFilled_dd4f85:hover,
+.lookFilled_afdfd9:hover {
+    background: linear-gradient(135deg, var(--meru-amber-glow), var(--meru-amber)) !important;
+    color: var(--meru-bg-dark) !important;
+}
+
+.lookOutlined_dd4f85,
+.lookOutlined_afdfd9 {
+    border-color: rgba(197, 109, 58, 0.42) !important;
+    color: var(--meru-amber-glow) !important;
+}
+
+/* ── Cards, Popouts, Menus ─────────────────────────────────── */
+.menu_d90b3d,
+.root_f9a4c9,
+.root_cd87e7,
+.contentWrapper_af5dbb,
+.container_eedf95,
+.messagesPopoutWrap_ac90a2,
+.browser_f542fc,
+.userPopoutOuter_c69a7b,
+.userProfileOuterThemed_c69a7b,
+.quickSelectPopout_ebaca5 {
+    background: rgba(26, 14, 16, 0.96) !important;
+    border: 1px solid rgba(197, 109, 58, 0.18) !important;
+    box-shadow: 0 18px 50px rgba(10, 4, 5, 0.5) !important;
+}
+
+.item_d90b3d.focused_d90b3d,
+.item_d90b3d:active:not(.hideInteraction_d90b3d),
+.option_b0286e:hover,
+.option_b0286e.selected_b0286e,
+.result_e3c1c6:hover,
+.focused_eedf95 {
+    background: rgba(197, 109, 58, 0.18) !important;
+    color: var(--meru-text) !important;
+}
+
+.cardPrimary_cb7a0e,
+.cardPrimaryEditable_cb7a0e,
+.accountProfileCard_b69b77,
+.background_b69b77,
+.connection_e2a436,
+.container_d1c246,
+.activityItem_a31c43,
+.itemCard_f02fcf,
+.wrapper_cd82a7 {
+    background: rgba(43, 21, 24, 0.62) !important;
+    border-color: rgba(197, 109, 58, 0.14) !important;
+}
+
+.tabBarItem_c2739c[aria-selected="true"],
+.topPill_a0 .selected_a0,
+.selected_b3f026 {
+    color: var(--meru-amber-glow) !important;
+    border-bottom-color: var(--meru-amber) !important;
+}
+
+/* ── Settings ──────────────────────────────────────────────── */
+.sidebarRegion_c25c6d,
+.contentRegion_c25c6d,
+.contentRegionScroller_c25c6d {
+    background: transparent !important;
+}
+
+.side_b3f026 .item_b3f026:hover {
+    background: rgba(197, 109, 58, 0.12) !important;
+}
+
+.side_b3f026 .item_b3f026.selected_b3f026 {
+    background: rgba(197, 109, 58, 0.22) !important;
+    color: var(--meru-amber-glow) !important;
+}
+
+.closeButton_df5532 {
+    border-color: rgba(197, 109, 58, 0.36) !important;
+    color: var(--meru-amber) !important;
+}
+
+.closeButton_df5532:hover {
+    background: rgba(197, 109, 58, 0.18) !important;
+}
+
+/* ── Voice / Media / Status ───────────────────────────────── */
+.wrapper_adcaac,
+.callContainer_d880dc,
+.gradientContainer_bfe55a,
+.videoControls_bfe55a {
+    background: rgba(19, 10, 12, 0.86) !important;
+}
+
+.liveShapeRound_c0ff72,
+.live_b195a5,
+.status_d60d75[aria-label*="Do Not Disturb"] {
+    background: var(--meru-red-bright) !important;
+}
+
+.status_d60d75[aria-label*="Online"] {
+    background: var(--meru-teal) !important;
+}
+
+.status_d60d75[aria-label*="Idle"] {
+    background: var(--meru-gold) !important;
+}
+
+/* ── Finishing Touches ─────────────────────────────────────── */
+a,
+.anchor_af404b,
+.fakeLink_cdb578,
+.timestamp_f9f2ca,
+.username_f9f2ca:hover,
+.clickable_d808b0:hover .name_d808b0 {
+    color: var(--meru-amber-glow) !important;
+}
+
+.divider_d5deea,
+.divider_c2654d,
+.sectionDivider_c43953 {
+    border-color: rgba(197, 109, 58, 0.14) !important;
+}
+
+.content_d5deea,
+.unreadPill_c2654d {
+    background: var(--meru-amber) !important;
+    color: var(--meru-bg-dark) !important;
+}
+
+.unreadPillCapStroke_c2654d {
+    color: var(--meru-amber) !important;
+    fill: var(--meru-amber) !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(197, 109, 58, 0.45) !important;
+    border-color: transparent !important;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(43, 21, 24, 0.32) !important;
+}
+
+/* ── Sidebar Hard Overrides ────────────────────────────────── */
+#app-mount nav[aria-label*="Servers"],
+#app-mount nav[aria-label*="servers"],
+#app-mount [data-list-id="guildsnav"],
+#app-mount [class*="guilds_"],
+#app-mount [class*="guilds_"] [class*="scroller_"],
+#app-mount [class*="itemsContainer_"],
+#app-mount [class*="tree_"] {
+    background: #130a0c !important;
+    border-right: 1px solid rgba(197, 109, 58, 0.16) !important;
+}
+
+#app-mount [class*="sidebar_"],
+#app-mount [class*="sidebarList_"],
+#app-mount [class*="guildSidebar_"],
+#app-mount [class*="privateChannels_"],
+#app-mount [class*="container_"]:has([data-list-id="channels"]),
+#app-mount [data-list-id="channels"],
+#app-mount [aria-label*="Channels"],
+#app-mount [aria-label*="channels"],
+#app-mount [class*="scroller_"][aria-label*="Channels"],
+#app-mount [class*="scroller_"][aria-label*="channels"] {
+    background: linear-gradient(180deg, rgba(43, 21, 24, 0.92), rgba(26, 14, 16, 0.92)) !important;
+    border-right: 1px solid rgba(197, 109, 58, 0.16) !important;
+}
+
+#app-mount [class*="sidebar_"] [class*="container_"],
+#app-mount [class*="sidebar_"] [class*="scroller_"],
+#app-mount [class*="sidebarList_"] [class*="container_"],
+#app-mount [class*="sidebarList_"] [class*="scroller_"],
+#app-mount [class*="privateChannels_"] [class*="scroller_"],
+#app-mount [data-list-id="channels"] [class*="content_"] {
+    background: transparent !important;
+}
+
+#app-mount [class*="sidebar_"] [class*="header_"],
+#app-mount [class*="sidebarList_"] [class*="header_"],
+#app-mount [class*="sidebar_"] [class*="searchBar_"],
+#app-mount [class*="privateChannels_"] [class*="searchBar_"] {
+    background: rgba(26, 14, 16, 0.78) !important;
+    border-bottom: 1px solid rgba(197, 109, 58, 0.14) !important;
+    box-shadow: 0 8px 24px rgba(10, 4, 5, 0.24) !important;
+}
+
+#app-mount [data-list-id="channels"] [class*="link_"],
+#app-mount [class*="sidebar_"] [class*="link_"],
+#app-mount [class*="privateChannels_"] [class*="channel_"],
+#app-mount [class*="privateChannels_"] [class*="interactive_"] {
+    border-radius: 8px !important;
+    margin: 1px 8px !important;
+}
+
+#app-mount [data-list-id="channels"] [class*="link_"]:hover,
+#app-mount [class*="sidebar_"] [class*="link_"]:hover,
+#app-mount [class*="privateChannels_"] [class*="channel_"]:hover,
+#app-mount [class*="privateChannels_"] [class*="interactive_"]:hover {
+    background: rgba(197, 109, 58, 0.14) !important;
+    color: var(--meru-text) !important;
+}
+
+#app-mount [class*="modeSelected_"] [class*="link_"],
+#app-mount [class*="sidebar_"] [class*="selected_"] [class*="link_"],
+#app-mount [class*="privateChannels_"] [class*="selected_"],
+#app-mount [class*="privateChannels_"] [aria-selected="true"] {
+    background: linear-gradient(135deg, rgba(197, 109, 58, 0.34), rgba(132, 55, 39, 0.26)) !important;
+    color: var(--meru-amber-glow) !important;
+    box-shadow: inset 3px 0 0 var(--meru-amber) !important;
+}
+
+#app-mount [class*="panels_"] {
+    background: rgba(19, 10, 12, 0.88) !important;
+    border: 1px solid rgba(197, 109, 58, 0.18) !important;
+    border-radius: 12px !important;
+    margin: 0 8px 8px !important;
+}
+
+#app-mount [class*="childWrapper_"],
+#app-mount [class*="circleIconButton_"],
+#app-mount [data-list-id="guildsnav"] [class*="wrapper_"] {
+    border-radius: 14px !important;
+}
+
+#app-mount [class*="childWrapper_"]:hover,
+#app-mount [class*="circleIconButton_"]:hover,
+#app-mount [class*="selected_"] [class*="childWrapper_"] {
+    background: var(--meru-amber) !important;
+    color: var(--meru-bg-dark) !important;
+}

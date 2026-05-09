@@ -1,0 +1,147 @@
+/* ═══════════════════════════════════════════════════════════════
+   🔥 Meru Cozy — Rofi Theme
+   Warm glassmorphic launcher
+   ═══════════════════════════════════════════════════════════════ */
+
+* {
+    font: "JetBrainsMono Nerd Font 12";
+
+    bg-dark:        rgba(26, 14, 16, 0.92);
+    bg:             rgba(43, 21, 24, 0.88);
+    bg-light:       rgba(61, 30, 34, 0.85);
+    surface:        rgba(74, 36, 40, 0.7);
+    amber:          #c56d3a;
+    amber-glow:     #e8a04a;
+    red:            #843727;
+    red-bright:     #c53a3a;
+    teal:           #0b596c;
+    text:           #e8dcd0;
+    text-dim:       #a89080;
+    gold:           #d4a832;
+    transparent:    rgba(0, 0, 0, 0);
+
+    background-color: @transparent;
+    text-color: @text;
+}
+
+window {
+    width: 550px;
+    background-color: @bg-dark;
+    border: 2px;
+    border-color: rgba(197, 109, 58, 0.25);
+    border-radius: 16px;
+    padding: 20px;
+}
+
+mainbox {
+    spacing: 12px;
+    children: [inputbar, message, listview];
+}
+
+/* ── Input Bar ───────────────────────────────────────────────── */
+inputbar {
+    background-color: @bg;
+    border: 1px;
+    border-color: rgba(197, 109, 58, 0.2);
+    border-radius: 12px;
+    padding: 10px 16px;
+    spacing: 10px;
+    children: [prompt, entry];
+}
+
+prompt {
+    text-color: @amber;
+    font: "JetBrainsMono Nerd Font 14";
+}
+
+entry {
+    text-color: @text;
+    placeholder: "search...";
+    placeholder-color: @text-dim;
+    cursor-color: @amber-glow;
+}
+
+/* ── List View ───────────────────────────────────────────────── */
+listview {
+    lines: 8;
+    columns: 1;
+    fixed-height: true;
+    spacing: 4px;
+    scrollbar: false;
+    background-color: @transparent;
+}
+
+element {
+    padding: 8px 14px;
+    border-radius: 10px;
+    spacing: 10px;
+    background-color: @transparent;
+    cursor: pointer;
+}
+
+element normal.normal {
+    background-color: @transparent;
+    text-color: @text;
+}
+
+element normal.urgent {
+    background-color: rgba(197, 58, 58, 0.15);
+    text-color: @red-bright;
+}
+
+element normal.active {
+    background-color: rgba(11, 89, 108, 0.15);
+    text-color: @teal;
+}
+
+element selected.normal {
+    background-color: rgba(197, 109, 58, 0.2);
+    text-color: @amber-glow;
+    border: 1px;
+    border-color: rgba(197, 109, 58, 0.15);
+}
+
+element selected.urgent {
+    background-color: rgba(197, 58, 58, 0.3);
+    text-color: @text;
+}
+
+element selected.active {
+    background-color: rgba(11, 89, 108, 0.3);
+    text-color: @text;
+}
+
+element alternate.normal {
+    background-color: @transparent;
+    text-color: @text;
+}
+
+element-icon {
+    size: 22px;
+    cursor: inherit;
+}
+
+element-text {
+    cursor: inherit;
+    text-color: inherit;
+    highlight: bold underline;
+}
+
+/* ── Message ─────────────────────────────────────────────────── */
+message {
+    background-color: @bg;
+    border-radius: 10px;
+    padding: 8px 14px;
+}
+
+textbox {
+    text-color: @text-dim;
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────── */
+scrollbar {
+    handle-width: 4px;
+    handle-color: @amber;
+    border-radius: 4px;
+    background-color: @bg;
+}
