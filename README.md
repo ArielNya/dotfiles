@@ -6,19 +6,19 @@ Warm Hyprland rice with a dark wine base, amber glow, muted cream text, and teal
 
 ## Palette
 
-| Role | Hex |
-| --- | --- |
-| Background | `#1a0e10` |
-| Surface | `#2b1518` |
+| Role           | Hex       |
+| -------------- | --------- |
+| Background     | `#1a0e10` |
+| Surface        | `#2b1518` |
 | Raised surface | `#4a2428` |
-| Text | `#e8dcd0` |
-| Muted text | `#a89080` |
-| Amber | `#c56d3a` |
-| Amber glow | `#e8a04a` |
-| Crimson | `#843727` |
-| Bright red | `#c53a3a` |
-| Teal | `#0b596c` |
-| Blue | `#3c608b` |
+| Text           | `#e8dcd0` |
+| Muted text     | `#a89080` |
+| Amber          | `#c56d3a` |
+| Amber glow     | `#e8a04a` |
+| Crimson        | `#843727` |
+| Bright red     | `#c53a3a` |
+| Teal           | `#0b596c` |
+| Blue           | `#3c608b` |
 
 ## Included
 
@@ -70,8 +70,8 @@ The installer expects:
 Clone the repo:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
-cd YOUR_REPO
+git clone https://github.com/ArielNya/dotfiles.git
+cd dotfiles
 ```
 
 Install packages:
@@ -172,4 +172,4 @@ Change `/home/ariel` if your home path is different.
 
 ## License
 
-Use, fork, and remix freely. Add a formal license if you want stricter terms.
+Use, fork, and remix freely
