@@ -1,6 +1,6 @@
 # Meru Cozy Dotfiles
 
-Warm Hyprland rice with a dark wine base, amber glow, muted cream text, and teal/blue accents. This repo contains my daily desktop configuration for Hyprland, Waybar, Rofi, Dunst, Kitty, Starship, Fastfetch, btop, and Vencord/Vesktop.
+Warm Hyprland rice with a dark wine base, amber glow, muted cream text, and teal/blue accents. This repo contains my daily desktop configuration for Hyprland, Waybar, Rofi, Dunst, Kitty, Neovim, Starship, Fastfetch, btop, and Vencord/Vesktop.
 
 ![Meru Cozy wallpaper](./file_0000000098c0720e927af9409863f54e.png)
 
@@ -29,6 +29,7 @@ Warm Hyprland rice with a dark wine base, amber glow, muted cream text, and teal
 - Rofi launcher and power menu theme
 - Dunst notifications
 - Kitty terminal theme
+- Neovim config with LazyVim and a matching Meru Cozy colorscheme
 - Starship prompt
 - Fastfetch config
 - btop theme
@@ -50,6 +51,7 @@ The installer expects:
 - `rofi-wayland`
 - `dunst`
 - `kitty`
+- `neovim`
 - `starship`
 - `fastfetch`
 - `btop`
@@ -100,6 +102,7 @@ Then it installs configs into:
 ~/.config/rofi
 ~/.config/dunst
 ~/.config/kitty
+~/.config/nvim
 ~/.config/fastfetch
 ~/.config/btop/themes
 ~/.config/Vencord/themes
@@ -119,6 +122,24 @@ The Discord theme is installed to both common Linux theme paths:
 ```
 
 Enable `Meru Cozy` in Vencord or Vesktop settings. If Discord is already open, toggle the theme off and on or restart the client.
+
+## Neovim
+
+The Neovim config lives in `config/neovim` and deploys to:
+
+```text
+~/.config/nvim
+```
+
+It includes a LazyVim setup, plugin specs, editor options, keymaps, and a native `meru-cozy` colorscheme:
+
+```text
+colors/meru-cozy.lua
+lua/meru-cozy/init.lua
+lua/plugins/colorscheme.lua
+```
+
+Open Neovim after deployment and let Lazy install/sync plugins on first launch.
 
 ## btop
 
@@ -150,6 +171,12 @@ Change `/home/ariel` if your home path is different.
 │   │   ├── hyprlock.conf
 │   │   └── hyprpaper.conf
 │   ├── kitty/kitty.conf
+│   ├── neovim
+│   │   ├── colors/meru-cozy.lua
+│   │   ├── init.lua
+│   │   ├── lazy-lock.json
+│   │   ├── lazyvim.json
+│   │   └── lua
 │   ├── rofi
 │   │   ├── meru-cozy.rasi
 │   │   └── power-menu.sh
@@ -169,6 +196,7 @@ Change `/home/ariel` if your home path is different.
 - `deploy.sh` overwrites the target config files after making a backup.
 - The wallpaper is copied to `~/.config/hypr/wallpaper.png`.
 - The configs assume JetBrainsMono Nerd Font is available.
+- Neovim plugins are managed by Lazy and are installed on first launch.
 
 ## License
 

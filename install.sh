@@ -24,11 +24,12 @@ echo "📦 [2/6] Waybar..."
 yay -S --needed --noconfirm \
     waybar
 
-# ── Launcher & Notifications ────────────────────────────────
-echo "📦 [3/6] Rofi & Dunst..."
+# ── Launcher, Notifications & Editor ─────────────────────────
+echo "📦 [3/6] Rofi, Dunst & Neovim..."
 yay -S --needed --noconfirm \
     rofi-wayland \
-    dunst
+    dunst \
+    neovim
 
 # ── Utilities ────────────────────────────────────────────────
 echo "📦 [4/6] Utilities..."

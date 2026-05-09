@@ -20,7 +20,7 @@ echo ""
 echo "📦 Backing up existing configs to $BACKUP_DIR..."
 mkdir -p "$BACKUP_DIR"
 
-for dir in hypr waybar rofi dunst kitty btop fastfetch Vencord vesktop; do
+for dir in hypr waybar rofi dunst kitty btop fastfetch nvim Vencord vesktop; do
     if [ -d "$CONFIG_DIR/$dir" ]; then
         echo "   ↳ backing up $dir/"
         cp -r "$CONFIG_DIR/$dir" "$BACKUP_DIR/$dir"
@@ -44,6 +44,7 @@ mkdir -p "$CONFIG_DIR/rofi"
 mkdir -p "$CONFIG_DIR/dunst"
 mkdir -p "$CONFIG_DIR/kitty"
 mkdir -p "$CONFIG_DIR/fastfetch"
+mkdir -p "$CONFIG_DIR/nvim"
 mkdir -p "$CONFIG_DIR/btop/themes"
 mkdir -p "$CONFIG_DIR/Vencord/themes"
 mkdir -p "$CONFIG_DIR/vesktop/themes"
@@ -102,6 +103,11 @@ echo "   ✅ starship.toml"
 echo "⚡ Deploying Fastfetch..."
 cp "$CONFIG_SRC/fastfetch/config.jsonc" "$CONFIG_DIR/fastfetch/config.jsonc"
 echo "   ✅ config.jsonc (keeping existing tattoo.txt logo)"
+
+# ── Deploy Neovim ────────────────────────────────────────────
+echo "📝 Deploying Neovim..."
+cp -r "$CONFIG_SRC/neovim/." "$CONFIG_DIR/nvim/"
+echo "   ✅ LazyVim config → ~/.config/nvim"
 
 # ── Deploy BTOP theme ────────────────────────────────────────
 echo "📈 Deploying BTOP theme..."
