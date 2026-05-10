@@ -118,7 +118,9 @@ echo "   ✅ MeruCozy.theme"
 echo "💬 Deploying Vencord theme..."
 cp "$CONFIG_SRC/vencord/themes/MeruCozy.css" "$CONFIG_DIR/Vencord/themes/MeruCozy.css"
 cp "$CONFIG_SRC/vencord/themes/MeruCozy.css" "$CONFIG_DIR/vesktop/themes/MeruCozy.css"
-echo "   ✅ MeruCozy.css → Vencord and Vesktop themes"
+cp "$CONFIG_SRC/vencord/themes/MeruCozy.theme.css" "$CONFIG_DIR/Vencord/themes/MeruCozy.theme.css"
+cp "$CONFIG_SRC/vencord/themes/MeruCozy.theme.css" "$CONFIG_DIR/vesktop/themes/MeruCozy.theme.css"
+echo "   ✅ MeruCozy.css and MeruCozy.theme.css → Vencord and Vesktop themes"
 echo ""
 
 # ── Summary ──────────────────────────────────────────────────

@@ -118,7 +118,9 @@ The Discord theme is installed to both common Linux theme paths:
 
 ```text
 ~/.config/Vencord/themes/MeruCozy.css
+~/.config/Vencord/themes/MeruCozy.theme.css
 ~/.config/vesktop/themes/MeruCozy.css
+~/.config/vesktop/themes/MeruCozy.theme.css
 ```
 
 Enable `Meru Cozy` in Vencord or Vesktop settings. If Discord is already open, toggle the theme off and on or restart the client.
@@ -182,6 +184,7 @@ Change `/home/ariel` if your home path is different.
 │   │   └── power-menu.sh
 │   ├── starship.toml
 │   ├── vencord/themes/MeruCozy.css
+│   ├── vencord/themes/MeruCozy.theme.css
 │   └── waybar
 │       ├── config.jsonc
 │       └── style.css
